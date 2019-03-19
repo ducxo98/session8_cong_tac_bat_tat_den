@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT</title>
+</head>
+<body>
+<script>
+    function ElectricLamp() {
+        this.turnOn = function () {
+            alert("turn on");
+            document.write("lighting"+ "<br>")
+        };
+        this.turnOff = function () {
+            alert("turn off");
+            document.write("not lighting" + "<br>")
+        }
+        
+    }
+    function SwitchButton() {
+        this.connectToLamp= function (Electriclamp) {
+            this.Electriclamp =Electriclamp
+        };
+        this.switchOff=function () {
+            this.Electriclamp.turnOff()
+        };
+        this.switchOn = function () {
+            this.Electriclamp.turnOn()
+
+        }
+        
+    }
+    let electriclamp = new ElectricLamp();
+    let switchbutton = new SwitchButton();
+    switchbutton.connectToLamp(electriclamp);
+    for (i=0;i<10;i++){
+        switchbutton.switchOff()
+        switchbutton.switchOn()
+    }
+</script>
+</body>
+</html>
